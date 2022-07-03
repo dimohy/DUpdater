@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Update xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Test Program" Version="0.1" Uri="https://maum.in/update/test">
+  <KeepFiles />
+  <Files />
+  <IgnoreFiles>
+    <File Name="backup" />
+  </IgnoreFiles>
+</Update>
