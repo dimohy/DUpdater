@@ -120,8 +120,9 @@ public class UpdateInfo
     /// <param name="path"></param>
     public void ApplyFiles(string path, string publishPath)
     {
-        if (Directory.Exists(publishPath) is false)
-            Directory.CreateDirectory(publishPath);
+        if (Directory.Exists(publishPath) is true)
+            Directory.Delete(publishPath, true);
+        Directory.CreateDirectory(publishPath);
 
         Files.Clear();
 
