@@ -141,9 +141,14 @@ public class UpdateInfo
                 Hash = hashCode
             });
 
+            var compressedFilename = Path.Combine(publishPath, $"{relativeFilename}.gz");
+            var compressedFilepath = Path.GetDirectoryName(compressedFilename);
+            if (Directory.Exists(compressedFilepath) is false)
+                Directory.CreateDirectory(compressedFilepath);
+
             // Compress with gzip.
             using var targetFileStream = System.IO.File.OpenRead(file);
-            using var compressedStream = System.IO.File.OpenWrite(Path.Combine(publishPath, $"{relativeFilename}.gz"));
+            using var compressedStream = System.IO.File.OpenWrite(compressedFilename);
             using var compressor = new GZipStream(compressedStream, CompressionMode.Compress);
             targetFileStream.CopyTo(compressor);
         }
