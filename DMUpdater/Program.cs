@@ -107,7 +107,7 @@ internal static class Program
 
         var p = new Process();
         p.StartInfo.FileName = tempExeFilename;
-        p.StartInfo.Arguments = $"UpdateNext {RootPath}";
+        p.StartInfo.Arguments = $"UpdateNext \"{RootPath}\"";
         p.StartInfo.Verb = "runas"; // Elevate Admin Privileges
         p.Start();
 
@@ -155,12 +155,12 @@ internal static class Program
 enum ActionMode
 {
     CheckUpdate = 0,
-    SplashScreen,
-    Generate,
-    Update,
-    UpdateNext,
-    Restore,
-    RestoreNext,
+    SplashScreen = 1,
+    Generate = 2,
+    Update = 3,
+    UpdateNext = 4,
+    Restore = 5,
+    RestoreNext = 6,
 }
 
 enum ActionOptions
